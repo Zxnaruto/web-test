@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detailed information about Product 1 from My Company.">
+    <title data-i18n="product1_title">Product A</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- orestbida cookieconsent 分支 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.1.0/dist/cookieconsent.css">
+    <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.1.0/dist/cookieconsent.umd.js" defer></script>
+    <script src="../assets/js/cookies.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <!-- Include header -->
+    <div w3-include-html="../components/header.html"></div>
+    <div class="overlay"></div>
+    <!-- Main content -->
+    <section class="content" data-aos="fade-up" data-aos-delay="100">
+        <h1 id="product-title" data-i18n="product1_title">Product A</h1>
+
+        <!-- Product Overview Section -->
+        <section class="product-section" data-aos="fade-up" data-aos-delay="200">
+            <article class="product-detail">
+                <img data-i18n-img="product1" alt="Product 1" data-aos="zoom-in" data-aos-delay="300" loading="lazy">
+
+                <div class="product-detail-info">
+                    <p id="product-description" data-i18n="product_description_battery_a">
+                        High-capacity battery pack for extended usage in all conditions.
+                    </p>
+
+                    <ul class="features">
+                        <li><strong data-i18n="battery_type">Battery Type:</strong> <span
+                                data-i18n="lithium_ion">Lithium-ion</span></li>
+                        <li><strong data-i18n="voltage">Voltage:</strong> 3.7V</li>
+                        <li><strong data-i18n="capacity">Capacity:</strong> 5000mAh</li>
+                        <li><strong data-i18n="weight">Weight:</strong> 150g</li>
+                        <li><strong data-i18n="dimensions">Dimensions:</strong> 100 x 60 x 20mm</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <!-- Technical Specifications Table -->
+        <section class="product-section" data-aos="fade-up" data-aos-delay="400">
+            <h2 data-i18n="technical_specifications">Technical Specifications</h2>
+            <div class="product-details-table">
+                <table>
+                    <tr>
+                        <th data-i18n="description">Description</th>
+                        <td data-i18n="product_description_battery_a">High-capacity battery pack for extended usage in
+                            all conditions.</td>
+                    </tr>
+                    <tr>
+                        <th data-i18n="application">Application</th>
+                        <td data-i18n="application_battery_a">Portable devices, industrial equipment, and outdoor
+                            electronics.</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Performance Analysis -->
+        <section class="product-section" data-aos="fade-up" data-aos-delay="500">
+            <h2 data-i18n="performance_analysis">Performance Analysis</h2>
+            <div class="product-details-table">
+                <table>
+                    <tr>
+                        <th data-i18n="energy_density">Energy Density</th>
+                        <td>300 Wh/kg</td>
+                    </tr>
+                    <tr>
+                        <th data-i18n="charge_cycle">Charge Cycle</th>
+                        <td data-i18n="over_1000_cycles">Over 1000 cycles</td>
+                    </tr>
+                    <tr>
+                        <th data-i18n="operating_temp">Operating Temp</th>
+                        <td>-20°C to 60°C</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Key Advantages -->
+        <section class="product-section" data-aos="fade-up" data-aos-delay="600">
+            <h2 data-i18n="key_advantages">Key Advantages</h2>
+            <ul class="advantages-list">
+                <li data-aos="fade-left" data-aos-delay="700"><span data-i18n="compact_design">✅ High energy density for
+                        compact design</span></li>
+                <li data-aos="fade-left" data-aos-delay="800"><span data-i18n="fast_charging">✅ Fast charging support
+                        (up to 80% in 30 mins)</span></li>
+                <li data-aos="fade-left" data-aos-delay="900"><span data-i18n="long_cycle_life">✅ Long cycle life and
+                        low self-discharge</span></li>
+                <li data-aos="fade-left" data-aos-delay="1000"><span data-i18n="safe_conditions">✅ Safe and stable under
+                        extreme conditions</span></li>
+            </ul>
+        </section>
+    </section>
+
+    <!-- Include footer -->
+    <div w3-include-html="../components/footer.html"></div>
+    <div class="overlay"></div>
+    <button id="backToTop" class="btn btn-primary" title="Back to Top" data-aos="fade-up" data-aos-duration="300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <!-- Scripts -->
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    };
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    return;
+                }
+            }
+        }
+        includeHTML();
+    </script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
