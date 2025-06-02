@@ -182,24 +182,6 @@ document.addEventListener("DOMContentLoaded", async function () {
                         }
                     }
                 }
-            },
-            onFirstConsent: ({ cookie }) => {
-                console.log("First consent set:", cookie);
-            },
-            onConsent: ({ cookie }) => {
-                console.log("Consent updated:", cookie);
-            },
-            onChange: ({ changedCategories }) => {
-                console.log("Changed categories:", changedCategories);
-            },
-            onModalShow: ({ modalName }) => {
-                console.log(`Modal "${modalName}" shown`);
-            },
-            onModalReady: ({ modal }) => {
-                console.log("Modal DOM ready");
-            },
-            onModalHide: () => {
-                console.log("Modal hidden");
             }
         };
     }
