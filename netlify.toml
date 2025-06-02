@@ -25,20 +25,45 @@
 [[headers]]
   for = "/*"
   [headers.values]
+    # 强制 HTTPS 和 HSTS
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+
+    # 内容安全策略 (CSP) - 移除了 'unsafe-inline'
     Content-Security-Policy = """
       default-src 'self';
       script-src 'self' https://unpkg.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
-      style-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com;
+      style-src 'self' https://unpkg.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com;
       img-src 'self' data: https:;
       font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
       connect-src 'self';
       frame-ancestors 'none';
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
     """
+
+    # 防止 MIME 类型嗅探
     X-Content-Type-Options = "nosniff"
+
+    # 防止页面被嵌套在 iframe 中
     X-Frame-Options = "DENY"
+
+    # 启用浏览器 XSS 保护机制
     X-XSS-Protection = "1; mode=block"
-    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+    # 控制浏览器特性权限（如摄像头、麦克风）
+    Permissions-Policy = "geolocation=(), midi=(), sync-xhr=(), usb=(), wake-lock=(), xr-spatial-tracking=()"
+
+    # 设置 Referrer-Policy 避免敏感信息泄露
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # 启用证书透明性检查
+    Expect-CT = "enforce, max-age=604800"
+
+    # 跨域隔离策略（COOP + CORP）
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Resource-Policy = "same-origin"
+    Cross-Origin-Embedder-Policy = "require-corp"
 
 
 # 防止目录列表暴露
