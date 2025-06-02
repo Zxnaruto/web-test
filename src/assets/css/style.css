@@ -576,41 +576,19 @@ div.cc-floating>.cc-container>.cc-window {
     bottom: 20px;
     right: 20px;
     z-index: 999;
-    display: none;
     width: 44px;
     height: 44px;
     border-radius: 50%;
     background-color: #007bff;
-    color: white;
-    border: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    cursor: pointer;
-
-    /* 居中关键属性 */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-     font-size: 1.5rem;
+    padding: 0;
 }
 
-#backToTop:hover,
-#backToTop:focus {
-    background-color: #0056b3;
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* 强制图标居中 */
-#backToTop .fas.fa-arrow-up {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    margin: 0 !important;
-    text-align: center !important;
-    font-size: 1.2rem;
+.back-to-top-icon {
+    display: block;
+    margin: auto;
 }
 

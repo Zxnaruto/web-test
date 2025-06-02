@@ -14,14 +14,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.1.0/dist/cookieconsent.css">
     <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.1.0/dist/cookieconsent.umd.js" defer></script>
     <script src="../assets/js/cookies.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> -->
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body>
     <!-- Include header -->
     <div w3-include-html="../components/header.html"></div>
- <div class="overlay"></div>
+    <div class="overlay"></div>
     <!-- Carousel -->
     <div class="swiper" data-aos="fade-up">
         <div class="swiper-wrapper">
@@ -131,10 +131,12 @@
 
     <!-- Include footer -->
     <div w3-include-html="../components/footer.html"></div>
-   <!-- 回到顶部按钮 -->
-<button id="backToTop" class="btn btn-primary" title="Back to Top" data-aos="fade-up" data-aos-duration="300">
-    <i class="fas fa-arrow-up"></i>
-</button>
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" class="btn btn-primary" title="Back to Top" data-aos="fade-up" data-aos-duration="300">
+        <svg class="back-to-top-icon" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M12 5l-8 8h6v7h4v-7h6z" fill="#fff" />
+        </svg>
+    </button>
     <!-- Scripts -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="../assets/js/include.js"></script>
