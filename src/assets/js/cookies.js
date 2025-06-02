@@ -496,7 +496,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                 consentModal: {
                     layout: "box",
                     position: "bottom right",
-                    transition: "slide"
+                    transition: "slide",
+                    inlineStyles: false // 关键点：禁用内联样式
                 },
                 preferencesModal: {
                     layout: "bar",
