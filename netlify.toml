@@ -31,8 +31,8 @@
     # 内容安全策略 (CSP) - 移除了 'unsafe-inline'
     Content-Security-Policy = """
       default-src 'self';
-      script-src 'self' https://unpkg.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
-      style-src 'self' https://unpkg.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com;
+      script-src 'self' https://unpkg.com https://cdn.jsdelivr.net;
+      style-src 'self' https://unpkg.com https://cdn.jsdelivr.net https://fonts.googleapis.com;
       img-src 'self' data: https:;
       font-src 'self' https://fonts.gstatic.com;
       connect-src 'self';
