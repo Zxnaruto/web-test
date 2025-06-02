@@ -52,7 +52,7 @@
     X-XSS-Protection = "1; mode=block"
 
     # 控制浏览器特性权限（如摄像头、麦克风）
-    Permissions-Policy = "geolocation=(), midi=(), sync-xhr=(), usb=(), wake-lock=(), xr-spatial-tracking=()"
+    Permissions-Policy = "geolocation=(), midi=(), sync-xhr=(), usb=(), xr-spatial-tracking=()"
 
     # 设置 Referrer-Policy 避免敏感信息泄露
     Referrer-Policy = "strict-origin-when-cross-origin"
