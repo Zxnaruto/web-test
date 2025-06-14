@@ -1,5 +1,4 @@
 let currentLang = localStorage.getItem('lang') || 'en';
-
 function loadLanguage(lang) {
     //  保留滚动位置（避免切换语言后页面跳转）
     const scrollPos = window.scrollY;

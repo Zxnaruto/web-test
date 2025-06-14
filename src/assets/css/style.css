@@ -592,3 +592,11 @@ div.cc-floating>.cc-container>.cc-window {
     margin: auto;
 }
 
+/* <a> */
+.clear-cookies-link {
+  color: #007bff;
+  text-decoration: underline;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 0.5rem;
+}

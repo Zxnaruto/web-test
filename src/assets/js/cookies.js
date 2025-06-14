@@ -116,11 +116,11 @@ document.addEventListener("DOMContentLoaded", async function () {
                                     description: translations.en.cookiePolicy.necessary.description,
                                     linkedCategory: 'necessary'
                                 },
-                                {
-                                    title: "Performance and Analytics",
-                                    description: translations.en.cookiePolicy.analytics.description,
-                                    linkedCategory: 'analytics'
-                                },
+                                // {
+                                //     title: "Performance and Analytics",
+                                //     description: translations.en.cookiePolicy.analytics.description,
+                                //     linkedCategory: 'analytics'
+                                // },
                                 {
                                     title: "More information",
                                     description: `For any queries in relation to our policy on cookies and your choices, please <a href="../pages/contact.html" class="cc-link">contact us</a>`
@@ -147,11 +147,11 @@ document.addEventListener("DOMContentLoaded", async function () {
                                     description: translations.de.cookiePolicy.necessary.description,
                                     linkedCategory: 'necessary'
                                 },
-                                {
-                                    title: "Leistungs- und Analyse-Cookies",
-                                    description: translations.de.cookiePolicy.analytics.description,
-                                    linkedCategory: 'analytics'
-                                },
+                                // {
+                                //     title: "Leistungs- und Analyse-Cookies",
+                                //     description: translations.de.cookiePolicy.analytics.description,
+                                //     linkedCategory: 'analytics'
+                                // },
                                 {
                                     title: "Weitere Informationen",
                                     description: `Für Fragen zu unserer Cookie-Richtlinie oder Ihre Einstellungen wenden Sie sich bitte per <a href=\"mailto:contact@company.com\" class="cc-link">E-Mail</a>.`
@@ -172,16 +172,16 @@ document.addEventListener("DOMContentLoaded", async function () {
                         }
                     }
                 },
-                analytics: {
-                    enabled: false,
-                    services: {
-                        google_analytics: {
-                            label: "Google Analytics",
-                            description: translations[lang].cookiePolicy.analytics.description,
-                            cookies: [/(_ga)/]
-                        }
-                    }
-                }
+                // ,analytics: {
+                //     enabled: false,
+                //     services: {
+                //         google_analytics: {
+                //             label: "Google Analytics",
+                //             description: translations[lang].cookiePolicy.analytics.description,
+                //             cookies: [/(_ga)/]
+                //         }
+                //     }
+                // }
             }
         };
     }
@@ -194,3 +194,18 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     });
 });
+
+function clearUserData() {
+    // 清除 localStorage
+    localStorage.removeItem('lang');
+
+    // 清除 cookies（示例：清除 CookieConsent 的 cookie）
+    document.cookie = "cc_cookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    
+    // 如果 CookieConsent 实例存在，重置其状态
+    if (typeof CookieConsent !== 'undefined') {
+        CookieConsent.reset();
+    }
+
+    alert("Cookies and preferences have been cleared. Please refresh the page.");
+}
