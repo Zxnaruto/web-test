@@ -600,3 +600,18 @@ div.cc-floating>.cc-container>.cc-window {
   display: inline-block;
   margin-top: 0.5rem;
 }
+/* privacy link button */
+.link-button {
+  background: none;
+  border: none;
+  color: #007bff; /* 蓝色链接色 */
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+
+.link-button:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
