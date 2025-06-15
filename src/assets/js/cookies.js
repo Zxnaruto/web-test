@@ -205,16 +205,20 @@ function clearUserData() {
     // 清除 localStorage
     localStorage.removeItem('lang');
 
-    // 清除 cookies（示例：清除 CookieConsent 的 cookie）
+    // 获取当前域名
+    const domain = window.location.hostname;
+
+    // 尝试清除多个路径下的 cookie
     const paths = ["path=/", "path=/pages/", "path=/components/", "path=/assets/"];
-        paths.forEach(p => {
-            document.cookie = `cc_cookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; ${p}; Secure; SameSite=Strict`;
-        });
-    
+    paths.forEach(p => {
+        document.cookie = `cc_cookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; ${p}; Secure; SameSite=Strict; domain=${domain}`;
+    });
+
     // 如果 CookieConsent 实例存在，重置其状态
     if (typeof CookieConsent !== 'undefined') {
         CookieConsent.reset();
     }
 
     alert("Cookies and preferences have been cleared. Please refresh the page.");
+    location.reload();
 }
