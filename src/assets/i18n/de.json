@@ -58,7 +58,8 @@
   "privacy_section_9_title": "9. Version der Datenschutzerklärung",
   "privacy_section_9_content": "Version: 1.0, zuletzt aktualisiert am 14.06.2025",
   "data_clear_alert": "Das System wurde aktualisiert. Bitte konfigurieren Sie Ihre Spracheinstellungen und Cookie-Präferenzen erneut.",
-  
+  "clear_cookies_alert": "Cookies und Einstellungen wurden gelöscht. Bitte laden Sie die Seite neu.",
+
   "battery_type": "Akkutyp",
   "voltage": "Spannung",
   "capacity": "Kapazität",

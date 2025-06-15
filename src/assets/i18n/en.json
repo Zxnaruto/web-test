@@ -57,6 +57,7 @@
   "privacy_section_9_title":  "9. Version",
   "privacy_section_9_content": "version: 1.0 last updated: 2025-06-14",
   "data_clear_alert": "The system has been upgraded. Please reconfigure your preferences (such as language and cookie settings).",
+  "clear_cookies_alert": "Cookies and preferences have been cleared. Please refresh the page.",
 
   "battery_type": "Battery Type",
   "voltage": "Voltage",

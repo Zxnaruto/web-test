@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", async function () {
+    const clearButton = document.getElementById('clearPreferencesBtn');
+    if (clearButton) {
+        clearButton.addEventListener('click', function () {
+            clearUserData();
+        });
+    }
     let allTranslations = {}; // 存储所有语言的翻译
     const lang = localStorage.getItem('lang') || 'en';
 
