@@ -459,15 +459,33 @@ div.cc-floating>.cc-container>.cc-window {
 }
 
 .product-details-table th {
-    background-color: #f1f5f9;
+    background-color: #f9f9f9;
     font-weight: bold;
-    width: 160px;
     text-align: left;
+    padding-left: 1rem;
+}
+
+.product-details-table th[rowspan] {
+    vertical-align: middle;
+}
+
+.product-details-table td[rowspan] {
+    vertical-align: middle;
+}
+
+.product-details-table caption {
+    caption-side: top;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    background-color: #f9f9f9;
 }
 
 .advantages-list {
-    list-style: none;
-    padding-left: 0;
+    list-style-type: none;
+    padding: 0;
     margin-top: 1rem;
 }
 
